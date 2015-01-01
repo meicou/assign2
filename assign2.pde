@@ -224,7 +224,15 @@ void keyPressed() {
         }else{
         frogX += 32;
         }break;              
- }
+ }if(frogX >= width - 16){
+      frogX = width - 32;
+    }else if(frogX < 0){
+      frogX = 0;
+    }else if(frogY >= height){
+      frogY = height - 32;
+    }else if(frogY <= 0){
+      frogY = 0;
+    }
     }
     if(key==ENTER && gameState == GAME_WIN){
       gameState = GAME_RUN;
